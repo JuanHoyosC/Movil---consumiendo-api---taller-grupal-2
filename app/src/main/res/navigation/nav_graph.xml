@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/login">
+    <fragment
+        android:id="@+id/login"
+        android:name="com.jcabarique.tallernavegacionlogin.ui.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_home3"
+            app:destination="@id/home3" />
+        <action
+            android:id="@+id/action_login_to_signup"
+            app:destination="@id/signup" />
+    </fragment>
+    <fragment
+        android:id="@+id/home3"
+        android:name="com.jcabarique.tallernavegacionlogin.ui.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home3_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup"
+        android:name="com.jcabarique.tallernavegacionlogin.ui.Signup"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signup_to_login"
+            app:destination="@id/login" />
+    </fragment>
+</navigation>
