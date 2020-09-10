@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_home3_to_login"
             app:destination="@id/login" />
+        <action
+            android:id="@+id/action_home3_to_todos"
+            app:destination="@id/todos" />
     </fragment>
     <fragment
         android:id="@+id/signup"
@@ -34,4 +37,9 @@
             android:id="@+id/action_signup_to_login"
             app:destination="@id/login" />
     </fragment>
+    <fragment
+        android:id="@+id/todos"
+        android:name="com.jcabarique.tallernavegacionlogin.ui.Todos"
+        android:label="fragment_todos"
+        tools:layout="@layout/fragment_todos" />
 </navigation>
