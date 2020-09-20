@@ -23,7 +23,7 @@ class PreferenceProvider {
 
         fun setUser(user: User) {
             preference.edit().putString("usuario", user.usuario).apply()
-            preference.edit().putString("clave", user.clave).apply()
+            preference.edit().putString("token", user.token).apply()
         }
 
         fun getUsuario(): String {

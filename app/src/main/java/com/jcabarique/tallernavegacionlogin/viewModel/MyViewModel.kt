@@ -11,6 +11,4 @@ class MyViewModel: ViewModel() {
     fun getClave() = MyRepository.getClave()
     fun setUser(user: User) =  MyRepository.setUser(user)
 
-
-
 }
