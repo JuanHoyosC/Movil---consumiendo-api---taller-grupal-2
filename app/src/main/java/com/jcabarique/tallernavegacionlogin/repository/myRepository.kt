@@ -11,6 +11,7 @@ object MyRepository {
     fun getUsuario() = PreferenceProvider.getUsuario();
     fun getToken() = PreferenceProvider.getToken();
     fun setUser(user: User) = PreferenceProvider.setUser(user)
-
+    fun getEmail()  = PreferenceProvider.getEmail();
+    fun getClave() = PreferenceProvider.getClave();
 
 }

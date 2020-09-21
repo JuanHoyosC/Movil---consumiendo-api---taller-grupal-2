@@ -29,9 +29,9 @@ class LoginViewModel: ViewModel() {
     fun signin(usuario: Usuario, it: View) {
         viewModelScope.launch {
             val theReturnPost = loginRepository.signin(usuario)
-            Log.d("Mensaje", theReturnPost.token + " " + theReturnPost.name)
+            Log.d("Mensaje", theReturnPost.token + " " + theReturnPost.username)
             if  (theReturnPost.token.length !== 0) {
-                val user = User(theReturnPost.name, theReturnPost.token);
+                val user = User(theReturnPost.username, theReturnPost.token, theReturnPost.email, usuario.password);
                 //Se manda el usuario y el token al preference
                 myRepository.setUser(user);
                 setLogged(true);

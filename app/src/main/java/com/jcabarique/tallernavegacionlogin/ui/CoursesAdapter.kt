@@ -7,13 +7,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jcabarique.tallernavegacionlogin.R
 import com.jcabarique.tallernavegacionlogin.data.Courses
 import kotlinx.android.synthetic.main.list_item_course.view.*
-import kotlinx.android.synthetic.main.list_item_todo.view.*
+
 
 class CoursesAdapter (val courses: ArrayList<Courses>): RecyclerView.Adapter<CoursesAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.list_item_course, parent, false)
         return ViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return courses.size
+    }
+
+    override fun onBindViewHolder(holder: CoursesAdapter.ViewHolder, position: Int) {
+        holder.bind(courses[position])
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -23,16 +31,6 @@ class CoursesAdapter (val courses: ArrayList<Courses>): RecyclerView.Adapter<Cou
             itemView.nameCourse.text = course.name
             itemView.numStudents.text = course.students.toString()
         }
-    }
-
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-        return courses.size
-    }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
-        holder.bind(courses[position])
     }
 
 }

@@ -11,6 +11,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.jcabarique.tallernavegacionlogin.R
+import com.jcabarique.tallernavegacionlogin.data.Usuario
+import com.jcabarique.tallernavegacionlogin.viewModel.CourseViewModel
 import com.jcabarique.tallernavegacionlogin.viewModel.LoginViewModel
 import com.jcabarique.tallernavegacionlogin.viewModel.MyViewModel
 import kotlinx.android.synthetic.main.fragment_home.view.*
@@ -18,6 +20,7 @@ import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class Home : Fragment() {
     val loginViewModel: LoginViewModel by activityViewModels()
+    val courseViewModel: CourseViewModel by activityViewModels()
     val myViewModel: MyViewModel by activityViewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,8 +43,17 @@ class Home : Fragment() {
         view.findViewById<Button>(R.id.button).setOnClickListener {
             navController.navigate(R.id.action_home3_to_todos)
         }
+
         view.findViewById<Button>(R.id.btnCursos).setOnClickListener {
+            val usuario = Usuario(myViewModel.getEmail(), myViewModel.getClave())
+            loginViewModel.signin(usuario, view)
             navController.navigate(R.id.action_home3_to_course)
+        }
+
+        view.findViewById<Button>(R.id.buttonCrear).setOnClickListener {
+            val usuario = Usuario(myViewModel.getEmail(), myViewModel.getClave())
+            loginViewModel.signin(usuario, view)
+            courseViewModel.setCourse();
         }
 
         view.buttonSalir.setOnClickListener {

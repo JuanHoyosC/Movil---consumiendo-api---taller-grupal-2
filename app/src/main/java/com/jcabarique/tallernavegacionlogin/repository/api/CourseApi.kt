@@ -8,8 +8,13 @@ import retrofit2.http.*
 
 interface CourseApi {
         @GET("courses")
-        suspend fun getCourse(
+        suspend fun getCourses(
            @Header("Authorization") authToken:String
         ): List<Courses>
+
+        @POST("courses")
+        suspend fun setCourse(
+            @Header("Authorization") authToken:String
+        )
 
 }

@@ -18,11 +18,9 @@ class Course : Fragment() {
     val courseViewModel : CourseViewModel by activityViewModels()
     private val adapter = CoursesAdapter(ArrayList())
     lateinit var courses: List<Courses>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
     }
 
     override fun onCreateView(
@@ -42,7 +40,7 @@ class Course : Fragment() {
 
         // get the live data and start observing
         courseViewModel.allCoursesLiveData.observe(getViewLifecycleOwner(), Observer {
-            adapter.courses .clear()
+            adapter.courses.clear()
             adapter.courses.addAll(it)
             adapter.notifyDataSetChanged()
         })

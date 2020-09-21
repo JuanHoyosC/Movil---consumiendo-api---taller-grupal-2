@@ -1,5 +1,6 @@
 package com.jcabarique.tallernavegacionlogin.viewModel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -18,6 +19,11 @@ class CourseViewModel: ViewModel(){
         getCourses()
     }
 
+    fun setCourse() {
+        viewModelScope.launch {
+            val theReturnCourse = courseRepository.setCourse()
+        }
+    }
 
     fun getCourses(){
         viewModelScope.launch {

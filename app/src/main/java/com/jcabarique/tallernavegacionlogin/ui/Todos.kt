@@ -19,6 +19,7 @@ class Todos : Fragment() {
     val todoViewModel: TodoViewModel by activityViewModels()
     private val adapter = TodosAdapter(ArrayList())
     lateinit var todos : List<Todo>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

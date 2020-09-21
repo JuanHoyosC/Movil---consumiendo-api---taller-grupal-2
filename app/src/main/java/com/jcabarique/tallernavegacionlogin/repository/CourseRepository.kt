@@ -7,4 +7,5 @@ object CourseRepository {
     private val apiService = LoginAPiService()
 
     suspend fun getCourses() = apiService.getCourses()
+    suspend fun setCourse() = apiService.setCourse()
 }

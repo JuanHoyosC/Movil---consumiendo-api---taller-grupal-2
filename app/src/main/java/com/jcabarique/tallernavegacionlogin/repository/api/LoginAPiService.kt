@@ -34,6 +34,11 @@ class LoginAPiService {
 
     suspend fun getCourses():List<Courses> {
         val token = PreferenceProvider.getToken()
-        return courseApi.getCourse( "Bearer "+token)
+        return courseApi.getCourses( "Bearer " + token)
+    }
+
+    suspend fun setCourse(){
+        val token = PreferenceProvider.getToken()
+        return courseApi.setCourse( "Bearer " + token)
     }
 }
