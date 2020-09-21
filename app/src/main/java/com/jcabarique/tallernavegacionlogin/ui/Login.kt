@@ -46,7 +46,7 @@ class Login : Fragment() {
             val clave: EditText = view.claveInput
 
             val usuario = Usuario(email.text.toString(),clave.text.toString())
-            loginViewModel.signin(usuario, it)
+            loginViewModel.signin(usuario, view)
 
 
         }

@@ -9,7 +9,8 @@ import com.jcabarique.tallernavegacionlogin.recurso.PreferenceProvider
 object MyRepository {
 
     fun getUsuario() = PreferenceProvider.getUsuario();
-    fun getClave() = PreferenceProvider.getClave();
+    fun getToken() = PreferenceProvider.getToken();
     fun setUser(user: User) = PreferenceProvider.setUser(user)
+
 
 }

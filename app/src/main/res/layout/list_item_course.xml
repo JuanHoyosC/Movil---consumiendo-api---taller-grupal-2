@@ -20,23 +20,37 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="92dp"
+            android:layout_height="191dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tittle"
+                android:id="@+id/idCourse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:text="Aqui va el titulo"
+                android:text="Id"
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/completed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/nameCourse"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
                 android:layout_weight="0"
-                android:text="completed" />
+                android:text="Name" />
+
+            <TextView
+                android:id="@+id/profesor"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_weight="0"
+                android:text="Professor" />
+
+            <TextView
+                android:id="@+id/numStudents"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="0"
+                android:text="numStudents" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

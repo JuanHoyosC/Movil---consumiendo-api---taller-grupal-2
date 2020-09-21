@@ -30,8 +30,8 @@ class PreferenceProvider {
             return preference.getString("usuario", "Juan").toString()
         }
 
-        fun getClave(): String {
-            return preference.getString("clave", "1234").toString()
+        fun getToken(): String {
+            return preference.getString("token", "1234").toString()
         }
 
     }

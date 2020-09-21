@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_home3_to_todos"
             app:destination="@id/todos" />
+        <action
+            android:id="@+id/action_home3_to_course"
+            app:destination="@id/course" />
     </fragment>
     <fragment
         android:id="@+id/signup"
@@ -42,4 +45,9 @@
         android:name="com.jcabarique.tallernavegacionlogin.ui.Todos"
         android:label="fragment_todos"
         tools:layout="@layout/fragment_todos" />
+    <fragment
+        android:id="@+id/course"
+        android:name="com.jcabarique.tallernavegacionlogin.ui.Course"
+        android:label="fragment_courses"
+        tools:layout="@layout/fragment_courses" />
 </navigation>

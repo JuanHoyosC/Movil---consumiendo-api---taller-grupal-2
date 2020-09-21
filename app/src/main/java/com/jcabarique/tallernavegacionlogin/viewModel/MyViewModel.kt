@@ -8,7 +8,7 @@ class MyViewModel: ViewModel() {
     private val myRepository = MyRepository
 
     fun getUsuario() = MyRepository.getUsuario()
-    fun getClave() = MyRepository.getClave()
+    fun getToken() = MyRepository.getToken()
     fun setUser(user: User) =  MyRepository.setUser(user)
 
 }

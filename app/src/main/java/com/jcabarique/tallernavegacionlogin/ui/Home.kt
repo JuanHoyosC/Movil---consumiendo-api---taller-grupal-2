@@ -40,6 +40,9 @@ class Home : Fragment() {
         view.findViewById<Button>(R.id.button).setOnClickListener {
             navController.navigate(R.id.action_home3_to_todos)
         }
+        view.findViewById<Button>(R.id.btnCursos).setOnClickListener {
+            navController.navigate(R.id.action_home3_to_course)
+        }
 
         view.buttonSalir.setOnClickListener {
            loginViewModel.setLogged(false)

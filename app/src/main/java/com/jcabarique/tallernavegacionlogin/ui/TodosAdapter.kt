@@ -4,7 +4,6 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.jcabarique.tallernavegacionlogin.R
 import com.jcabarique.tallernavegacionlogin.repository.api.Todo
@@ -29,10 +28,10 @@ class TodosAdapter(val todos: ArrayList<Todo>): RecyclerView.Adapter<TodosAdapte
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(todo: Todo) {
             if(todo.completed) {
-                itemView.title.setBackgroundColor(Color.parseColor("#FF5233"))
+                itemView.tittle.setBackgroundColor(Color.parseColor("#FF5233"))
                 itemView.completed.setBackgroundColor(Color.parseColor("#3390FF"))
             }
-            itemView.title.text = todo.title
+            itemView.tittle.text = todo.title
             itemView.completed.text = todo.completed.toString()
         }
     }
