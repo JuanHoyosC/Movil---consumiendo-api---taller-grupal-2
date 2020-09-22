@@ -5,7 +5,6 @@ import com.jcabarique.tallernavegacionlogin.repository.api.LoginAPiService
 
 object CourseRepository {
     private val apiService = LoginAPiService()
-
     suspend fun getCourses() = apiService.getCourses()
     suspend fun setCourse() = apiService.setCourse()
 }

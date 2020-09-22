@@ -1,5 +1,6 @@
 package com.jcabarique.tallernavegacionlogin.repository.api
 
+import com.jcabarique.tallernavegacionlogin.data.CourseComplete
 import com.jcabarique.tallernavegacionlogin.data.Courses
 import com.jcabarique.tallernavegacionlogin.data.LoginPost
 import com.jcabarique.tallernavegacionlogin.data.Usuario
@@ -23,6 +24,12 @@ class LoginAPiService {
         .build()
         .create(CourseApi::class.java)
 
+    private val courseCompleteApi = Retrofit.Builder()
+        .baseUrl("https://movil-api.herokuapp.com/$dbId/courses/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+        .create(CourseCompleteApi::class.java)
+
     suspend fun signin(usuario: Usuario) : LoginPost{
         return loginApi.signin(usuario.email, usuario.password)
     }
@@ -40,5 +47,10 @@ class LoginAPiService {
     suspend fun setCourse(){
         val token = PreferenceProvider.getToken()
         return courseApi.setCourse( "Bearer " + token)
+    }
+
+    suspend fun getCoursesComplete():CourseComplete {
+        val token = PreferenceProvider.getToken()
+        return courseCompleteApi.getCoursesComplete( "Bearer " + token)
     }
 }
