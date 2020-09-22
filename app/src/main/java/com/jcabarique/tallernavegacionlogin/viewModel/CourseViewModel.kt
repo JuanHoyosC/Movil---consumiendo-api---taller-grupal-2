@@ -32,4 +32,8 @@ class CourseViewModel: ViewModel(){
             allCoursesLiveData.postValue(allCourses)
         }
     }
+
+    fun setIdCourse(id: String){
+
+    }
 }
