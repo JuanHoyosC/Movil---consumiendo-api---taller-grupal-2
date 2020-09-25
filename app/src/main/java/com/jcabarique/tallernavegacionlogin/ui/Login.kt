@@ -7,18 +7,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.jcabarique.tallernavegacionlogin.R
+import com.jcabarique.tallernavegacionlogin.data.LoginPost
+import com.jcabarique.tallernavegacionlogin.data.User
 import com.jcabarique.tallernavegacionlogin.data.Usuario
+import com.jcabarique.tallernavegacionlogin.repository.MyRepository
 import com.jcabarique.tallernavegacionlogin.viewModel.LoginViewModel
 import com.jcabarique.tallernavegacionlogin.viewModel.MyViewModel
 import kotlinx.android.synthetic.main.fragment_login.view.*
 
+
 class Login : Fragment() {
     val loginViewModel: LoginViewModel by activityViewModels()
+    private val myRepository = MyRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -44,11 +51,8 @@ class Login : Fragment() {
         view.buttonIngresar.setOnClickListener {
             val email: EditText = view.usuarioInput
             val clave: EditText = view.claveInput
-
             val usuario = Usuario(email.text.toString(),clave.text.toString())
-            loginViewModel.signin(usuario, view)
-
-
+            loginViewModel.signin(usuario, it)
         }
 
         return view

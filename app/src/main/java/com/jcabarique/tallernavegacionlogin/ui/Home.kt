@@ -15,13 +15,16 @@ import com.jcabarique.tallernavegacionlogin.data.Usuario
 import com.jcabarique.tallernavegacionlogin.viewModel.CourseViewModel
 import com.jcabarique.tallernavegacionlogin.viewModel.LoginViewModel
 import com.jcabarique.tallernavegacionlogin.viewModel.MyViewModel
+import com.jcabarique.tallernavegacionlogin.viewModel.ReiniciarViewModel
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 
 class Home : Fragment() {
     val loginViewModel: LoginViewModel by activityViewModels()
     val courseViewModel: CourseViewModel by activityViewModels()
+    val reiniciarViewModel: ReiniciarViewModel by activityViewModels()
     val myViewModel: MyViewModel by activityViewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -40,20 +43,26 @@ class Home : Fragment() {
             }
         })
 
-        view.findViewById<Button>(R.id.button).setOnClickListener {
-            navController.navigate(R.id.action_home3_to_todos)
-        }
 
         view.findViewById<Button>(R.id.btnCursos).setOnClickListener {
-            val usuario = Usuario(myViewModel.getEmail(), myViewModel.getClave())
-            loginViewModel.signin(usuario, view)
-            navController.navigate(R.id.action_home3_to_course)
+            courseViewModel.loginCourse()
+            courseViewModel.allCourses.clear()
+            navController.navigate(R.id.action_home3_to_coursesFragment)
         }
+
+        view.findViewById<Button>(R.id.btnReiniciar).setOnClickListener {
+            val usuario = Usuario(myViewModel.getEmail(), myViewModel.getClave())
+            reiniciarViewModel.reiniciar()
+            view.textReinicio.text = "Se reinicio la DB"
+            view.textAgregado.text = ""
+        }
+
 
         view.findViewById<Button>(R.id.buttonCrear).setOnClickListener {
             val usuario = Usuario(myViewModel.getEmail(), myViewModel.getClave())
-            loginViewModel.signin(usuario, view)
             courseViewModel.setCourse();
+            view.textReinicio.text = ""
+            view.textAgregado.text = "Se agrego un curso"
         }
 
         view.buttonSalir.setOnClickListener {

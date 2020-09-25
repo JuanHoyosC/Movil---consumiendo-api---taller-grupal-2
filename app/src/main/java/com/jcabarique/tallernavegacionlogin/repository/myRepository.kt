@@ -13,5 +13,14 @@ object MyRepository {
     fun setUser(user: User) = PreferenceProvider.setUser(user)
     fun getEmail()  = PreferenceProvider.getEmail();
     fun getClave() = PreferenceProvider.getClave();
-
+    fun setIdCourse(idCourse: String) = PreferenceProvider.setIdCourse(idCourse)
+    fun getIdCourse() = PreferenceProvider.getIdCourse()
+    fun setCourse(curso: String) = PreferenceProvider.setCourse(curso)
+    fun getCourse() = PreferenceProvider.getCourse()
+    fun setIdStudent(idStudent: String) = PreferenceProvider.setIdStudent(idStudent)
+    fun getIdStudent() = PreferenceProvider.getIdStudent()
+    fun setProfessor(professor: String) = PreferenceProvider.setProfessor(professor)
+    fun getProfessor() = PreferenceProvider.getProfessor()
+    fun setIdProfessor(idProfessor: String) = PreferenceProvider.setIdProfessor(idProfessor)
+    fun getIdProfessor() = PreferenceProvider.getIdProfessor()
 }

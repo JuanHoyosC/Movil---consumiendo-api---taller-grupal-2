@@ -7,14 +7,14 @@
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
     android:layout_marginEnd="16dp"
+    android:backgroundTint="@color/design_default_color_background"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardStudent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorAccent"
-        android:clickable="true"
+        android:backgroundTint="@color/colorPrimary"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
         app:contentPadding="10dp">
@@ -22,6 +22,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/design_default_color_background"
             android:orientation="vertical">
 
             <TextView
@@ -29,9 +30,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="0"
-                android:text="Id"
-                android:textColor="@color/design_default_color_background"
-                android:textSize="24sp" />
+                android:text="id"
+                android:textColor="@color/design_default_color_background" />
 
             <TextView
                 android:id="@+id/nameStudent2"
@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="0"
-                android:text="Professor"
+                android:text="username"
                 android:textColor="@color/design_default_color_background" />
 
             <TextView
@@ -54,7 +54,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="0"
-                android:text="numStudents"
+                android:text="phone"
+                android:textColor="@color/design_default_color_background" />
+
+            <TextView
+                android:id="@+id/emailStudent"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="email"
+                android:textColor="@color/design_default_color_background" />
+
+            <TextView
+                android:id="@+id/cityStudent"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="city"
+                android:textColor="@color/design_default_color_background" />
+
+            <TextView
+                android:id="@+id/countryStudent"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:shadowColor="@color/design_default_color_background"
+                android:text="country"
+                android:textColor="@color/design_default_color_background" />
+
+            <TextView
+                android:id="@+id/birthdayStudent"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:shadowColor="@color/design_default_color_background"
+                android:text="Birthday"
                 android:textColor="@color/design_default_color_background" />
 
         </LinearLayout>

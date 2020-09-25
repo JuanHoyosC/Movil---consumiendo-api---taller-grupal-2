@@ -35,7 +35,7 @@ class Signup : Fragment() {
         view.buttonRegistrarse.setOnClickListener {
             val usuario: EditText = view.usuarioInput1
             val clave: EditText = view.claveInput1
-            val username: EditText = view.username
+            val username: EditText = view.numStudent
             val nombre: EditText = view.name
 
             if (usuario.text.toString().length !== 0 && clave.text.toString().length !== 0){

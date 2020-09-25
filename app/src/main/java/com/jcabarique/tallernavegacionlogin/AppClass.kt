@@ -10,7 +10,6 @@ import com.jcabarique.tallernavegacionlogin.recurso.PreferenceProvider
 class AppClass : Application() {
     override fun onCreate() {
         super.onCreate()
-        Log.d("VideoViewModel","AppClass onCreate")
         PreferenceProvider.initialize(this)
     }
 }

@@ -41,6 +41,46 @@ class PreferenceProvider {
             return preference.getString("email", "Juan").toString()
         }
 
+        fun setIdCourse(value: String) {
+            preference.edit().putString("idCourse", value).apply()
+        }
+
+        fun setIdStudent(value: String) {
+            preference.edit().putString("idStudent", value).apply()
+        }
+
+        fun setCourse(value: String) {
+            preference.edit().putString("nameCourse", value).apply()
+        }
+
+        fun setProfessor(value: String) {
+            preference.edit().putString("professor", value).apply()
+        }
+
+        fun setIdProfessor(value: String) {
+            preference.edit().putString("idProfessor", value).apply()
+        }
+
+        fun getCourse(): String {
+            return preference.getString("nameCourse", "1234").toString()
+        }
+
+        fun getProfessor(): String {
+            return preference.getString("professor", "1234").toString()
+        }
+
+        fun getIdProfessor(): String {
+            return preference.getString("idProfessor", "1234").toString()
+        }
+
+        fun getIdCourse(): String {
+            return preference.getString("idCourse", "1234").toString()
+        }
+
+        fun getIdStudent(): String {
+            return preference.getString("idStudent", "1234").toString()
+        }
+
         fun getClave(): String {
             return preference.getString("clave", "1234").toString()
         }

@@ -28,8 +28,8 @@
             android:id="@+id/action_home3_to_todos"
             app:destination="@id/todos" />
         <action
-            android:id="@+id/action_home3_to_course"
-            app:destination="@id/course" />
+            android:id="@+id/action_home3_to_coursesFragment"
+            app:destination="@id/coursesFragment" />
     </fragment>
     <fragment
         android:id="@+id/signup"
@@ -46,8 +46,42 @@
         android:label="fragment_todos"
         tools:layout="@layout/fragment_todos" />
     <fragment
-        android:id="@+id/course"
-        android:name="com.jcabarique.tallernavegacionlogin.ui.Course"
+        android:id="@+id/courseFragment"
+        android:name="com.jcabarique.tallernavegacionlogin.ui.courseFragment"
+        android:label="courseFragment" >
+        <action
+            android:id="@+id/action_courseFragment_to_studentsFragment"
+            app:destination="@id/studentsFragment" />
+        <action
+            android:id="@+id/action_courseFragment_to_professorFragment"
+            app:destination="@id/professorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coursesFragment"
+        android:name="com.jcabarique.tallernavegacionlogin.ui.CoursesFragment"
         android:label="fragment_courses"
-        tools:layout="@layout/fragment_courses" />
+        tools:layout="@layout/fragment_courses" >
+        <action
+            android:id="@+id/action_coursesFragment_to_courseFragment"
+            app:destination="@id/courseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentsFragment"
+        android:name="com.jcabarique.tallernavegacionlogin.ui.StudentsFragment"
+        android:label="fragment_students"
+        tools:layout="@layout/fragment_students" >
+        <action
+            android:id="@+id/action_studentsFragment_to_studentFragment"
+            app:destination="@id/studentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentFragment"
+        android:name="com.jcabarique.tallernavegacionlogin.ui.StudentFragment"
+        android:label="fragment_student"
+        tools:layout="@layout/fragment_student" />
+    <fragment
+        android:id="@+id/professorFragment"
+        android:name="com.jcabarique.tallernavegacionlogin.ui.ProfessorFragment"
+        android:label="fragment_professor"
+        tools:layout="@layout/fragment_professor" />
 </navigation>

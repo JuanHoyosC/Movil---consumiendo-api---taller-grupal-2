@@ -3,12 +3,12 @@ package com.jcabarique.tallernavegacionlogin.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jcabarique.tallernavegacionlogin.recurso.PreferenceProvider
-import com.jcabarique.tallernavegacionlogin.repository.api.LoginAPiService
+import com.jcabarique.tallernavegacionlogin.repository.api.GlobalAPiService
 import com.jcabarique.tallernavegacionlogin.data.Usuario
 
 object LoginRepository {
 
-    private val apiService = LoginAPiService()
+    private val apiService = GlobalAPiService()
 
     suspend fun signin(usuario: Usuario) = apiService.signin(usuario)
     suspend fun signup(usuario: Usuario) = apiService.signup(usuario)

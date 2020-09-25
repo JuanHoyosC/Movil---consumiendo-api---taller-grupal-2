@@ -9,16 +9,14 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jcabarique.tallernavegacionlogin.R
-import com.jcabarique.tallernavegacionlogin.repository.api.Todo
-import com.jcabarique.tallernavegacionlogin.viewModel.TodoViewModel
-import kotlinx.android.synthetic.main.fragment_todos.view.*
+import com.jcabarique.tallernavegacionlogin.viewModel.ProfessorViewModel
+import com.jcabarique.tallernavegacionlogin.viewModel.StudentsViewModel
+import kotlinx.android.synthetic.main.fragment_courses.view.*
 
 
-class Todos : Fragment() {
-
-    val todoViewModel: TodoViewModel by activityViewModels()
-    private val adapter = TodosAdapter(ArrayList())
-    lateinit var todos : List<Todo>
+class ProfessorFragment : Fragment() {
+    val professorViewModel : ProfessorViewModel by activityViewModels()
+    private val adapter = ProfessorAdapter(ArrayList())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,24 +28,23 @@ class Todos : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_todos, container, false)
+        return inflater.inflate(R.layout.fragment_professor, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // requireView gets the root view for the fragment's layout
         // (the one returned by onCreateView).
-        requireView().posts_recycler.adapter = adapter
-        requireView().posts_recycler.layoutManager = LinearLayoutManager(requireContext())
+        requireView().courses_recycler.adapter = adapter
+        requireView().courses_recycler.layoutManager = LinearLayoutManager(requireContext())
 
         // get the live data and start observing
-        todoViewModel.todosLiveData.observe(getViewLifecycleOwner(), Observer {
-            adapter.todos.clear()
-            adapter.todos.addAll(it)
+        professorViewModel.allProfessorLiveData.observe(getViewLifecycleOwner(), Observer {
+            adapter.professor.clear()
+            adapter.professor.addAll(it)
             adapter.notifyDataSetChanged()
         })
 
     }
-
 
 }

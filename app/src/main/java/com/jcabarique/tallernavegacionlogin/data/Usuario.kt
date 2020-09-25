@@ -6,4 +6,6 @@ data class Usuario (
     var username: String = "",
     var name: String = ""
 
-)
+){
+    var error: String = ""
+}

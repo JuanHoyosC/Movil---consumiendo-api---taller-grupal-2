@@ -7,57 +7,55 @@
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
     android:layout_marginEnd="16dp"
+    android:backgroundTint="@color/design_default_color_background"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card"
+        android:id="@+id/cardStudent"
         android:layout_width="match_parent"
-        android:layout_height="267dp"
-        android:backgroundTint="@color/design_default_color_background"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
         app:contentPadding="10dp">
 
         <LinearLayout
-            android:layout_width="379dp"
-            android:layout_height="246dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/design_default_color_background"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tipoPersona"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:layout_weight="0"
-                android:text="Tipo" />
 
             <TextView
                 android:id="@+id/idCourse"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_weight="0"
-                android:text="Id"
-                android:textSize="30sp" />
+                android:text="id"
+                android:textColor="@color/design_default_color_background" />
 
             <TextView
-                android:id="@+id/nameCourse"
+                android:id="@+id/nameStudent2"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:layout_weight="0"
-                android:text="Name" />
+                android:text="Name"
+                android:textColor="@color/design_default_color_background" />
 
             <TextView
-                android:id="@+id/profesor"
+                android:id="@+id/usernameStudent2"
                 android:layout_width="match_parent"
-                android:layout_height="47dp"
+                android:layout_height="30dp"
                 android:layout_weight="0"
-                android:text="Professor" />
+                android:text="email"
+                android:textColor="@color/design_default_color_background" />
 
             <TextView
-                android:id="@+id/numStudents"
+                android:id="@+id/phoneStudent2"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:layout_weight="0"
-                android:text="numStudents" />
+                android:text="username"
+                android:textColor="@color/design_default_color_background" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

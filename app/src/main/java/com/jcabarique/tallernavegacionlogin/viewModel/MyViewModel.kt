@@ -12,5 +12,6 @@ class MyViewModel: ViewModel() {
     fun getClave() = MyRepository.getClave();
     fun getToken() = MyRepository.getToken()
     fun setUser(user: User) =  MyRepository.setUser(user)
+    fun setIdCourse(idCourse: String) = MyRepository.setIdCourse(idCourse)
 
 }
